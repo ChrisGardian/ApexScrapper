@@ -11,9 +11,12 @@ Note: per-legend stats are only visible if the player has the relevant
 tracker equipped on their in-game banner (Wins, Games Played, etc.).
 """
 
+import os
 import requests
+from dotenv import load_dotenv
 
-API_KEY = "YOUR_API_KEY_HERE"
+load_dotenv()
+API_KEY = os.environ["APEX_API_KEY"]
 BASE_URL = "https://api.mozambiquehe.re/bridge"
 
 # platform: "PC" (Origin/Steam), "PS4" (PlayStation), "X1" (Xbox)
