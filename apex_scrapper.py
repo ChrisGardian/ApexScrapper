@@ -30,10 +30,9 @@ PLAYERS = [
 
 def fetch_player(name: str, platform: str) -> dict:
     r = requests.get(BASE_URL, params={
-        "auth": API_KEY,
         "player": name,
         "platform": platform,
-    }, timeout=10)
+    }, headers={"Authorization": API_KEY}, timeout=10)
     r.raise_for_status()
     return r.json()
 
